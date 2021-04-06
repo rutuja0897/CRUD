@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Data</title>
+</head>
+<body>
+     {{msg}}
+     <h2 id="head">Show ALL Records</h2>
+     <div id="SecondDiv">
+         <form action="/">
+             <input type="submit" value="<< Back">
+         </form>
+     </div>
+     <div id="OneDiv">
+         <table>
+             <thread>
+                 <th>ID</th>
+                 <th>Data 1</th>
+                 <th>Data 2</th>
+                 <th>Buttons</th>
+             </thread>
+             {% for d in data %}
+             <tr>
+                 <td>{{d.ID}}</td>
+                 <td>{{d.data1}}</td>
+                 <td>{{d.data2}}</td>
+                 <td>
+                     <a href="/edit?id={{d.ID}}">Edit</a>
+                     <a href="/delete?id={{d.ID}}">Delete</a>
+                 </td>
+             </tr>
+             {% endfor %}
+         </table>
+     </div>
+
+
+</body>
+</html>
